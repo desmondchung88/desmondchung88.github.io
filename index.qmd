@@ -1,11 +1,26 @@
 ---
-title: "temp_web"
+title: "Desmond Chung's Portfolio"
+image: profilepic.jpg
+about:
+  template: trestles
+  image-shape: round
+  image-width: 15em
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/desmondchung88
+    - icon: envelope
+      text: Email
+      href: mailto:2502081@singaporetech.edu.sg
 ---
 
-This is a Quarto website.
+## 👋 Welcome!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hi, I am **Desmond Chung**, an undergraduate student at the Singapore Institute of Technology (SIT) studying **Applied Computing (Fintech)**.
 
-```{r}
-1 + 1
-```
+This website serves as a portfolio of my journey, technical projects, and data visualization work.
+
+* [**About Me**](aboutme.qmd)
+* [**Projects**](projects.qmd) - Explore my technical projects.
+* [**Data Visualisation**](dataviz.qmd) - See my work with data storytelling.
+* [**Reflections**](reflection.qmd) - My thoughts on using GenAI tools.

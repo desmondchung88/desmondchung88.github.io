@@ -1,0 +1,29 @@
+---
+title: "Reflection on Using GenAI"
+format: html
+---
+
+## 🤖 My Experience with GenAI
+
+For this assessment, I primarily utilized **Google Gemini** to assist in the development of my Quarto website. As this was my first time using Quarto, GenAI served as an on-demand tutor to bridge the gap between my existing coding knowledge and this new framework.
+
+### 🛠️ How It Helped
+
+I used Gemini to explain the specific file structures of Quarto (such as the role of `_quarto.yml`) and to troubleshoot specific errors.
+
+* **Accelerated Learning:** Instead of spending hours reading through documentation to find basic setup instructions, I could ask specific questions like *"How do I change the output directory?"* and get immediate, actionable answers.
+* **Debugging:** When I encountered the issue where my Git tab was missing (due to being in the temporary project), Gemini helped me identify that I was working in the wrong directory and guided me to the correct workflow.
+* **Code Formatting:** It assisted in generating the correct YAML indentation for the navigation bar, which is often a source of syntax errors.
+
+### ⚖️ Benefits vs. Challenges
+
+| Aspect | Description |
+| :--- | :--- |
+| **Benefits** | **Speed.** The biggest advantage was the reduction in setup time. It allowed me to focus on the *content* (my projects and visualization) rather than getting stuck on configuration details. |
+| **Challenges** | **Context Awareness.** Sometimes the AI would provide generic advice that didn't match the specific constraints of the assignment (e.g., specific folder names), requiring me to double-check its suggestions against the lab manual. |
+
+### 🔮 Future Application in Fintech
+
+Reflecting on this, I see GenAI not just as a coding assistant, but as a productivity multiplier. In my future Fintech career, I plan to use similar tools to:
+1.  **Rapid Prototyping:** Quickly spinning up dashboards for financial data visualization.
+2.  **Documentation:** helping to comment and document complex Python scripts used for stock analysis.

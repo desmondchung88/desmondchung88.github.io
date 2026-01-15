@@ -1,0 +1,32 @@
+---
+title: "Desmond Chung"
+image: profilepic.jpg
+about:
+  template: trestles
+  image-shape: round
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/desmondchung88
+    - icon: envelope
+      text: Email
+      href: 2502081@singaporetech.edu.sg
+---
+
+### 🚀 About Me
+
+Hi, I am **Desmond Chung**, an undergraduate studying **Applied Computing in Fintech** at the Singapore Institute of Technology (SIT).
+
+I stand at the intersection of **Finance** and **Technology**. My passion lies in leveraging code to solve complex financial problems, from automating data analysis to building predictive models for stock market trends.
+
+### 🛠 Tech Stack
+
+I am currently building my proficiency in:
+
+* **Languages:** Python (Pandas, NumPy), Java, SQL
+* **Web Development:** HTML, CSS, Bootstrap
+* **Interests:** Quantitative Analysis, Machine Learning (NLP/FinBERT), and Algorithmic Trading.
+
+### 🎯 Goals
+
+I am actively seeking opportunities to apply my technical skills in a rigorous financial environment, specifically in roles related to software development or financial data analysis.

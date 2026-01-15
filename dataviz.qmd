@@ -1,0 +1,64 @@
+---
+title: "Projects"
+format: html
+toc: true
+---
+
+## 🛡️ Phishing Email Detection System
+
+### Project Overview
+As part of a team project, I developed a Python-based security tool designed to detect and classify phishing attempts. The system analyzes email headers, body content, and URLs to assign a **Risk Score**, classifying emails as *Safe*, *Suspicious*, or *Phishing*.
+
+This project focuses on **feature engineering** and **heuristic analysis** to identify social engineering attacks that bypass traditional filters.
+
+---
+
+### 🔍 Key Detection Features
+
+The system utilizes a multi-layered approach to analyze threats:
+
+#### 1. Sender Identity Verification
+* **Whitelist Validation:** Instant cross-check against a predefined list of trusted domains.
+* **Levenshtein Edit Distance:** Calculates string distance to detect "typosquatting" (e.g., `g0ogle.com` vs `google.com`).
+* **Fuzzy Matching:** Flags sender names that visually mimic trusted brands using fuzzy string similarity.
+* **Spoofing Detection:** Identifies display names that suspiciously resemble email addresses.
+
+#### 2. Content & Semantic Analysis
+* **Keyword Risk Scoring:** Scans for urgency triggers (e.g., "Verify", "Urgent") with weighted scoring based on position (Subject line vs. Body).
+* **HTML Forensics:** Detects risky HTML tags, embedded scripts, and hidden forms often used in credential harvesting.
+* **Character Distribution:** Flags obfuscation attempts, such as excessive punctuation or repeated symbols.
+
+#### 3. URL & External Intelligence
+* **Suspicious Link Detection:** Identifies mismatched domains (text vs. actual link) and raw IP addresses.
+* **VirusTotal API Integration:** Real-time reputation checks for URLs against vendor security databases.
+
+---
+
+### 📊 Performance & Visualization
+
+We moved beyond simple detection by implementing a comprehensive data analysis suite:
+
+* **Confusion Matrix:** To visualize True Positives vs. False Positives.
+* **Metrics:** calculated Precision, Recall, F1-Score, and Accuracy.
+* **Interactive Charts:** Bar charts and data tables to analyze feature correlation.
+
+
+
+### 💻 Technical Stack
+
+| Category | Tools Used |
+| :--- | :--- |
+| **Language** | Python |
+| **Data Processing** | Pandas, NumPy |
+| **Algorithms** | Levenshtein Distance, FuzzyWuzzy |
+| **APIs** | VirusTotal API |
+| **Visualisation** | Matplotlib, Seaborn |
+
+### 🧠 Method: The Risk Scoring Engine
+
+The core of our application is the **Final Risk Scoring** algorithm. It aggregates weighted scores from all detection modules.
+
+> **Logic:**
+> $$\text{Total Score} = (\text{Keyword Score} \times W_1) + (\text{URL Risk} \times W_2) + (\text{Sender Suspicion} \times W_3)$$
+
+If the `Total Score` exceeds the threshold, the email is flagged. This logic allows for granular tuning to reduce false positives.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Desmond Chung’s Portfolio</title>
+<title>Projects – temp_website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -69,11 +70,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="floating nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -84,6 +114,9 @@ ul.task-list li input[type="checkbox"] {
     <img src="./logo.png" alt="" class="navbar-logo light-content">
     <img src="./logo.png" alt="" class="navbar-logo dark-content">
     </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">temp_website</span>
+    </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -92,8 +125,13 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -105,58 +143,149 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
+   
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">👋 Welcome!</a></li>
+  <li><a href="#phishing-email-detection-system" id="toc-phishing-email-detection-system" class="nav-link active" data-scroll-target="#phishing-email-detection-system">🛡️ Phishing Email Detection System</a>
+  <ul class="collapse">
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project Overview</a></li>
+  <li><a href="#key-detection-features" id="toc-key-detection-features" class="nav-link" data-scroll-target="#key-detection-features">🔍 Key Detection Features</a></li>
+  <li><a href="#performance-visualization" id="toc-performance-visualization" class="nav-link" data-scroll-target="#performance-visualization">📊 Performance &amp; Visualization</a></li>
+  <li><a href="#technical-stack" id="toc-technical-stack" class="nav-link" data-scroll-target="#technical-stack">💻 Technical Stack</a></li>
+  <li><a href="#method-the-risk-scoring-engine" id="toc-method-the-risk-scoring-engine" class="nav-link" data-scroll-target="#method-the-risk-scoring-engine">🧠 Method: The Risk Scoring Engine</a></li>
+  </ul></li>
   </ul>
 </nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profilepic.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Desmond Chung’s Portfolio</h1>
+<h1 class="title">Projects</h1>
 </div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-    <div class="about-links">
-  <a href="https://github.com/desmondchung88" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="mailto:2502081@singaporetech.edu.sg" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
 
-<section id="welcome" class="level2">
-<h2 data-anchor-id="welcome">👋 Welcome!</h2>
-<p>Hi, I am <strong>Desmond Chung</strong>, an undergraduate student at the Singapore Institute of Technology (SIT) studying <strong>Applied Computing (Fintech)</strong>.</p>
-<p>This website serves as a portfolio of my journey, technical projects, and data visualization work.</p>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="phishing-email-detection-system" class="level2">
+<h2 class="anchored" data-anchor-id="phishing-email-detection-system">🛡️ Phishing Email Detection System</h2>
+<section id="project-overview" class="level3">
+<h3 class="anchored" data-anchor-id="project-overview">Project Overview</h3>
+<p>As part of a team project, I developed a Python-based security tool designed to detect and classify phishing attempts. The system analyzes email headers, body content, and URLs to assign a <strong>Risk Score</strong>, classifying emails as <em>Safe</em>, <em>Suspicious</em>, or <em>Phishing</em>.</p>
+<p>This project focuses on <strong>feature engineering</strong> and <strong>heuristic analysis</strong> to identify social engineering attacks that bypass traditional filters.</p>
+<hr>
+</section>
+<section id="key-detection-features" class="level3">
+<h3 class="anchored" data-anchor-id="key-detection-features">🔍 Key Detection Features</h3>
+<p>The system utilizes a multi-layered approach to analyze threats:</p>
+<section id="sender-identity-verification" class="level4">
+<h4 class="anchored" data-anchor-id="sender-identity-verification">1. Sender Identity Verification</h4>
 <ul>
-<li><a href="./aboutme.html"><strong>About Me</strong></a></li>
-<li><a href="./projects.html"><strong>Projects</strong></a> - Explore my technical projects.</li>
-<li><a href="./dataviz.html"><strong>Data Visualisation</strong></a> - See my work with data storytelling.</li>
-<li><a href="./reflection.html"><strong>Reflections</strong></a> - My thoughts on using GenAI tools.</li>
+<li><strong>Whitelist Validation:</strong> Instant cross-check against a predefined list of trusted domains.</li>
+<li><strong>Levenshtein Edit Distance:</strong> Calculates string distance to detect “typosquatting” (e.g., <code>g0ogle.com</code> vs <code>google.com</code>).</li>
+<li><strong>Fuzzy Matching:</strong> Flags sender names that visually mimic trusted brands using fuzzy string similarity.</li>
+<li><strong>Spoofing Detection:</strong> Identifies display names that suspiciously resemble email addresses.</li>
 </ul>
+</section>
+<section id="content-semantic-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="content-semantic-analysis">2. Content &amp; Semantic Analysis</h4>
+<ul>
+<li><strong>Keyword Risk Scoring:</strong> Scans for urgency triggers (e.g., “Verify”, “Urgent”) with weighted scoring based on position (Subject line vs.&nbsp;Body).</li>
+<li><strong>HTML Forensics:</strong> Detects risky HTML tags, embedded scripts, and hidden forms often used in credential harvesting.</li>
+<li><strong>Character Distribution:</strong> Flags obfuscation attempts, such as excessive punctuation or repeated symbols.</li>
+</ul>
+</section>
+<section id="url-external-intelligence" class="level4">
+<h4 class="anchored" data-anchor-id="url-external-intelligence">3. URL &amp; External Intelligence</h4>
+<ul>
+<li><strong>Suspicious Link Detection:</strong> Identifies mismatched domains (text vs.&nbsp;actual link) and raw IP addresses.</li>
+<li><strong>VirusTotal API Integration:</strong> Real-time reputation checks for URLs against vendor security databases.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="performance-visualization" class="level3">
+<h3 class="anchored" data-anchor-id="performance-visualization">📊 Performance &amp; Visualization</h3>
+<p>We moved beyond simple detection by implementing a comprehensive data analysis suite:</p>
+<ul>
+<li><strong>Confusion Matrix:</strong> To visualize True Positives vs.&nbsp;False Positives.</li>
+<li><strong>Metrics:</strong> calculated Precision, Recall, F1-Score, and Accuracy.</li>
+<li><strong>Interactive Charts:</strong> Bar charts and data tables to analyze feature correlation.</li>
+</ul>
+</section>
+<section id="technical-stack" class="level3">
+<h3 class="anchored" data-anchor-id="technical-stack">💻 Technical Stack</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Tools Used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Language</strong></td>
+<td style="text-align: left;">Python</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Data Processing</strong></td>
+<td style="text-align: left;">Pandas, NumPy</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Algorithms</strong></td>
+<td style="text-align: left;">Levenshtein Distance, FuzzyWuzzy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>APIs</strong></td>
+<td style="text-align: left;">VirusTotal API</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Visualisation</strong></td>
+<td style="text-align: left;">Matplotlib, Seaborn</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="method-the-risk-scoring-engine" class="level3">
+<h3 class="anchored" data-anchor-id="method-the-risk-scoring-engine">🧠 Method: The Risk Scoring Engine</h3>
+<p>The core of our application is the <strong>Final Risk Scoring</strong> algorithm. It aggregates weighted scores from all detection modules.</p>
+<blockquote class="blockquote">
+<p><strong>Logic:</strong> <span class="math display">\[\text{Total Score} = (\text{Keyword Score} \times W_1) + (\text{URL Risk} \times W_2) + (\text{Sender Suspicion} \times W_3)\]</span></p>
+</blockquote>
+<p>If the <code>Total Score</code> exceeds the threshold, the email is flagged. This logic allows for granular tuning to reduce false positives.</p>
 
 
 </section>
-</main></div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

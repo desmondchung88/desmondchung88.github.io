@@ -1,0 +1,22 @@
+---
+title: "projects"
+format: html
+---
+
+## Technical Projects
+
+During my time in SIT, I have developed a stock market analysis project using python to track the stock prices using technical indicators.
+
+![This is the webpage created using streamlit](webpage.png){width=80%}
+
+The project involved creating a web application using **Streamlit** that allows users to input stock ticker symbols and view real-time stock prices along with various technical indicators such as Moving Averages, RSI, and MACD. The application fetches data from financial APIs and provides interactive charts for better visualization.
+
+![This is the chart created using python data analysis libraries](chart.png){width=80%}
+
+The project helped me enhance my skills in Python programming, data analysis, and web development. It also provided practical experience in working with financial data and understanding stock market trends.
+
+![Cross-referenced ratings with wallstreet analysts](validation.png){width=80%}
+To ensure the accuracy of the technical indicators and stock price predictions, I cross-referenced the results with analyses from reputable financial sources such as Wall Street analysts and financial news websites. This validation step was crucial in confirming the reliability of the data presented in the application.
+
+[View Code on GitHub](https://github.com/desmondchung88/Stock_Analysis){.btn-custom}
+
